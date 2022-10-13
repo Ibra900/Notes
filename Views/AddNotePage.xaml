@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.AddNotePage"
+             xmlns:local="clr-namespace:Notes.ViewModels"
+             Title="Add Note">
+    <StackLayout Spacing="5" Padding="15" Margin="10">
+        
+        <VerticalStackLayout IsVisible="false">
+            <Label Text="ID" FontSize="Medium" IsEnabled="False" />
+            <Entry Text="{Binding NoteInfo.NoteId,Mode=TwoWay}" FontSize="Medium" IsEnabled="False"/>
+            <BoxView HeightRequest="0.5" Color="Green"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Title" FontSize="Medium"  />
+            <Entry Text="{Binding NoteInfo.Title,Mode=TwoWay}" FontSize="Medium" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Content" FontSize="Medium"  />
+            <Entry Text="{Binding NoteInfo.Content,Mode=TwoWay}" FontSize="Medium" />
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Save" Command="{Binding SaveNoteCommand}" HorizontalOptions="FillAndExpand"/>
+            <Button Text="cancel" Command="{Binding OnCancelCommand}" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+         
+    </StackLayout>
+</ContentPage>
